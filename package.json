@@ -1,0 +1,26 @@
+{
+  "name": "task-manager-cli",
+  "version": "1.0.0",
+  "description": "task manager cli app, first offline app",
+  "main": "./bin/app.js",
+  "bin": {
+    "task": "./bin/app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrheza/task-manager-cli.git"
+  },
+  "author": "Rheza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrheza/task-manager-cli/issues"
+  },
+  "homepage": "https://github.com/mrheza/task-manager-cli#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "esm": "^3.2.25"
+  }
+}

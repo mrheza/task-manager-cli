@@ -12,16 +12,26 @@ export async function list () {
   spinner.start();
 
   // replicate from remote db
-  await localDB.replicate.from(remoteDB);
-  spinner.stop(true);
+  try {
+    await localDB.replicate.from(remoteDB).on('complete', function () {
+      spinner.stop(true);
+      console.log('Database replicated');
+      console.log('You are online');
+    }).on('error', function (err) {
+      spinner.stop(true);
+      console.log('You are offline');
+    });
+  } catch (err) {
+    
+  }
 
   // get all data from local db
   localDB.allDocs({
     include_docs: true
   }).then(function (result) {
     const table = new Table({
-      head: ['No', 'ID', 'Title', 'Description', 'Tag'],
-      colWidths: [5, 40, 30, 30, 20],
+      head: ['No', 'ID', 'Title', 'Description', 'Tag', 'Status'],
+      colWidths: [5, 40, 30, 30, 20, 10],
       wordWrap: true
     });
     for (var key in result.rows) {
@@ -31,6 +41,7 @@ export async function list () {
         result.rows[key].doc.title,
         result.rows[key].doc.description,
         result.rows[key].doc.tag,
+        result.rows[key].doc.status === 0 ? 'Incomplete' : 'Complete',
       ]);
     }
     console.log(table.toString());

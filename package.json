@@ -21,6 +21,11 @@
   "homepage": "https://github.com/mrheza/task-manager-cli#readme",
   "dependencies": {
     "chalk": "^3.0.0",
-    "esm": "^3.2.25"
+    "cli-spinner": "^0.2.10",
+    "cli-table3": "^0.5.1",
+    "esm": "^3.2.25",
+    "minimist": "^1.2.5",
+    "pouchdb": "^7.2.1",
+    "yargs": "^15.3.1"
   }
 }

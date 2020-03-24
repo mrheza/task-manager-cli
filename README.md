@@ -4,7 +4,7 @@ This is task manager CLI using nodejs, pouchdb for local database and couchdb fo
 
 # Requirements
 
-Node Js 12 (recommended).
+Node Js 12 (tested).
 
 # Installation
 

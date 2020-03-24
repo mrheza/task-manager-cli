@@ -3,19 +3,12 @@ import chalk from 'chalk';
 const menus = {
   main: `
 ${chalk.greenBright('task [command] <options>')}
-  ${chalk.blueBright('now')} ................ show weather for now
-  ${chalk.blueBright('forecast')} ........... show weather forecast
-  ${chalk.blueBright('config')}.............. set API key, default city ID, default temperature units
+  ${chalk.blueBright('list')} ............... show task list
+  ${chalk.blueBright('upload')} ............. upload unsync data from locatedb to remote db
+  ${chalk.blueBright('update')}.............. set task status to complete/incomplete; Options: c/i <taskid>
   ${chalk.blueBright('version')} ............ show package version
   ${chalk.blueBright('help')} ............... show help menu for a command
 `,
-
-  now: `//...
-        `,
-  forecast: `//...
-        `,
-  config: `//...
-        `,
 }
 
 export async function help(args) {

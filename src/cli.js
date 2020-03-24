@@ -1,6 +1,7 @@
 import minimist from 'minimist';
 import { help } from './help';
 import { list } from './list';
+import { update } from './update';
 import { version } from './version';
 
 export async function cli(argsArray) {
@@ -26,6 +27,10 @@ export async function cli(argsArray) {
 
     case 'list':
       list(args);
+      break;
+
+    case 'update':
+      update(args);
       break;
 
     default:
